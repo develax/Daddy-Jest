@@ -4,14 +4,23 @@
 	"displayName": "Daddy-Jest",
 	"description": "Daddy-Jest is an extension for Visual Studio Code for debugging Jest tests. This extension allows you to run individual tests in the debugger with multiple test configuration files..",
 	"icon": "images/daddy-jest-128.png",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
+	"author": {
+    "name": "Sergey F.",
+    "email": "develax@gmail.com"
+	},
+	"bugs": {
+    "url": "https://github.com/DevelAx/Daddy-Jest/issues",
+    "email": "develax@gmail.com"
+  },
 	"repository": {
     "type": "git",
-    "url": "https://github.com/DevelAx/Daddy-Jest"
-  },
+    "url": "https://github.com/DevelAx/Daddy-Jest.git"
+	},
+	"homepage": "https://github.com/DevelAx/Daddy-Jest/blob/master/README.md",
 	"categories": [
 		"Debuggers"
 	],

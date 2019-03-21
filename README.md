@@ -1,65 +1,46 @@
-# daddy-jest README
+# 🕵 **Daddy-Jest**: debugging Jest tests tool for Visual Studio Code
 
-This is the README for your extension "daddy-jest". After writing up a brief description, we recommend including the following sections.
+Daddy-Jest is an extension for Visual Studio Code for debugging Jest tests. It allows you to run individual tests in the debugger. To do this the Jest configuration must be placed in `'package.json'` or in a separate config file.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This is the first version so it has only basic features that I couldn't find in other extensions.
 
-For example if there is an image subfolder under your extension project workspace:
+* Daddy-Jest, unlike other extensions, allows you to specify several test suites with different configuration files - the correct configuration is determined automatically at the time the test is run.
+* Starts debugging a test from the context menu command. The cursor should be within the test at this point:
+\!\[Context-menu command example\]\(images/context-menu-command.png\)
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+At the moment it doesn't seem to be possible to show the context menu option dynamically that's why Jest debug command is always present even if you call the menu outside the context of the test.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The extension has been built and tested in VSCode 1.32.3, Node.js: 10.2.0, Windows_NT x64. When encounter bugs please post them in GitHub repository issues.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+The Daddy-Jest extension contributes the following settings:
 
-For example:
+* `"daddy-jest.jestPath"`: It's Jest library directory path. Practically you don't need to specify it explicitly here, except when it is installed in a non-standard directory.
+* `"daddy-jest.jestConfigPath"`: It's a path to Jest config file, most often it's a part of the 'package.json' file and you don't need to specify it here, but in some cases you may want to keep it separatly and therefore you'll need to fill in this parameter.
+* `"daddy-jest.jestConfigPaths"`: In very rare cases you need to have multiple test suites with different configuration files and one `jestConfigPath` field wouldn't be enough for that. If so this parameter will help you to deal with multiple Jest config paths which should be specified as an array of strings. For example:
+```JSON
+"daddy-jest.jestConfigPaths": [
+  "test/jest-e2e.json",
+  "src/unit-test.json"
+]
+```
 
-This extension contributes the following settings:
+_Remark:_ even having multiple configs you can still keep one of the in the `"package.json"` and you don't need to add a path to it.
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+The first two options can filled in via Settings graphical interface whereas `jestConfigPaths` can be only defined via JSON format in the `"settings.json"` file. To open Daddy-Jest settings go to `File` -> `Preferences` -> `Settings` then in the left navigation column expand the `"Extensions"` item and there will be the `"Daddy-Jest"` item, click on it and you will see all its options available.
+
+\!\[Context-menu command example\]\(images/daddy-jest-settings.png\)
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+No.
 
-## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+---
 
 **Enjoy!**
