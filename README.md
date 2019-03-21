@@ -10,13 +10,14 @@ This is the first version so it has only basic features that I couldn't find in 
 
 * Daddy-Jest, unlike other extensions, allows you to specify several test suites with different configuration files - the correct configuration is determined automatically at the time the test is run.
 * Starts debugging a test from the context menu command. The cursor should be within the test at this point:
-\!\[Context-menu command example\]\(images/context-menu-command.png\)
+
+![Context-menu command example](images/context-menu-command.png)
 
 At the moment it doesn't seem to be possible to show the context menu option dynamically that's why Jest debug command is always present even if you call the menu outside the context of the test.
 
 ## Requirements
 
-The extension has been built and tested in VSCode 1.32.3, Node.js: 10.2.0, Windows_NT x64. When encounter bugs please post them in GitHub repository issues.
+The extension has been built and tested in VSCode 1.32.3, Node.js: 10.2.0, Windows_NT x64. When encounter bugs please post them in GitHub repository [issues](https://github.com/DevelAx/Daddy-Jest/issues).
 
 ## Extension Settings
 
@@ -36,7 +37,7 @@ _Remark:_ even having multiple configs you can still keep one of the in the `"pa
 
 The first two options can filled in via Settings graphical interface whereas `jestConfigPaths` can be only defined via JSON format in the `"settings.json"` file. To open Daddy-Jest settings go to `File` -> `Preferences` -> `Settings` then in the left navigation column expand the `"Extensions"` item and there will be the `"Daddy-Jest"` item, click on it and you will see all its options available.
 
-\!\[Context-menu command example\]\(images/daddy-jest-settings.png\)
+![Context-menu command example](images/daddy-jest-settings.png)
 
 ## Known Issues
 
