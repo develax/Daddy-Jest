@@ -1,4 +1,4 @@
-# 🕵 **Daddy-Jest**: debugging Jest tests tool for Visual Studio Code
+# 🕵 **Daddy-Jest**: Visual Studio Code extension for debugging Jest tests
 
 Daddy-Jest is an extension for Visual Studio Code for debugging Jest tests. It allows you to run individual tests in the debugger. To do this the Jest configuration must be placed in `'package.json'` or in a separate config file.
 
