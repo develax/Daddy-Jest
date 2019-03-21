@@ -1,23 +1,69 @@
 {
 	"name": "daddy-jest",
-	"displayName": "Daddy Jest",
-	"description": "",
+	"publisher": "develax",
+	"displayName": "Daddy-Jest",
+	"description": "Daddy-Jest is an extension for Visual Studio Code for debugging Jest tests. This extension allows you to run individual tests in the debugger with multiple test configuration files..",
+	"icon": "images/daddy-jest-128.png",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/DevelAx/Daddy-Jest"
+  },
 	"categories": [
-		"Other"
+		"Debuggers"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"commands": [
+			{
+				"command": "daddy-jest.debug-current-jest",
+				"title": "🕵 Daddy-Jest: Debug test(s)"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "daddy-jest.debug-current-jest",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": {
+			"title": "🕵 Daddy-Jest",
+			"properties": {
+				"daddy-jest.jestPath": {
+					"title": "Path to Jest package",
+					"type": "string",
+					"default": "",
+					"description": "Specify Jest directory path (leave empty to use default path)",
+					"scope": "window"
+				},
+				"daddy-jest.jestConfigPath": {
+					"title": "Jest config file path",
+					"type": "string",
+					"default": "",
+					"description": "Specify Jest config file path (if empty Jest will look into 'package.json' by default)",
+					"scope": "window"
+				},
+				"daddy-jest.jestConfigPaths": {
+					"title": "Additional Jest config file paths",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"description": "Relative path to Jest configuration file (json)."
+					},
+					"default": [],
+					"description": "Have more that one Jest suites with different config files? Add more here as an array (if empty Jest will look into 'package.json' by default).",
+					"scope": "window"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
